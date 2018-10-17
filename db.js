@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize(`postgresql://postgres:${encodeURIComponent(process.env.PASS)}@localhost/sellapplog`, {
     dialect: 'postgres'
 })
 
@@ -12,8 +12,3 @@ sequelize.authenticate().then(
 )
 
 module.exports = sequelize
-
-
-
-
-
