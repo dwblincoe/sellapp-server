@@ -18,6 +18,6 @@ app.use('/messages', message)
 
 
 
-app.listen(3001, () => {
+app.listen(process.env.PORT, () => {
     console.log('App is listening on 3001')
 })
